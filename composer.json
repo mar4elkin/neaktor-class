@@ -1,0 +1,15 @@
+{
+    "name": "mar4elkin/neaktor_class",
+    "description": "interlayer for neaktor api .",
+    "authors": [
+      {
+        "name": "Mark Tamarov",
+        "email": "marktamarov2001@gmail.com"
+      }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": "^7.0"
+    },
+    "repositories": "https://github.com/mar4elkin/neaktor-class"
+  }
