@@ -37,7 +37,7 @@ print_r($data);
 ```
 
 ## picker 
-На вход требуется `id_field` и `key`, где `id_field` -> id нужного поля, `key` -> поле которое нужно вывести, возвращает значение `key` 
+На вход требуется `id_field` и `key`, где `id_field` -> id нужного поля, `key` -> поле которое нужно вывести, возвращает значение `key`. Работет только с get запросом и если выбранна одна задача!
 
 ```
 // picker
@@ -49,7 +49,7 @@ $id = 'createddate';
 $key = 'value';
 
 $Neaktor = new Neaktor();  
-$data = $Neaktor->neoconn($url, $token, $json_string_delete, 'DELETE');
+$data = $Neaktor->neoconn($url, $token');
 echo $Neaktor->picker($id, $key);
 ```
 
