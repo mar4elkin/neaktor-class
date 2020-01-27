@@ -40,23 +40,20 @@ class Neaktor
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
             }
 
-            if ($body_request != ''){
-                $header = array(
-                    'Authorization:'. $Token .' ',
-                    'Content-Type: application/json',
-                    'Content-Length: ' . strlen($body_request)
-                );
-                curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $body_request);
 
-            }
+            $header = array(
+                'Authorization:'. $Token .' ',
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($body_request)
+            );
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $body_request);
 
-            if ($request_method == 'GET' && $body_request == '') {
-                $header = array('Authorization:'. $Token .' ');
-                curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-            }
-
-        } 
+        } else {
+            // GET method
+            $header = array('Authorization:'. $Token .' ');
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        }
         
         $this->data_json = json_decode(curl_exec($ch), TRUE);
         
